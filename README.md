@@ -1,5 +1,8 @@
 # MEWAGO-The-Hotel-Booking-App
-ewago : The Hotel Booking App
+Newago : The Hotel Booking App
+
+Note:-
+
 •This App Allow Hotel owners to Post Services on the Site and Users
 are able to Buy them. Used JavaScript with React Redux Node
 MongoDB to build the Marketplace , integrated Stripe payment
