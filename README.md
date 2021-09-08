@@ -1,5 +1,5 @@
 # MEWAGO-The-Hotel-Booking-App
-Newago : The Hotel Booking App
+Mewago : The Hotel Booking App
 
 Note:-
 
