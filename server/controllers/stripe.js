@@ -34,21 +34,3 @@ export const createConnectAccount = async (req, res) => {
   res.send(link);
   // 4. update payment schedule (optional. default is 2 days
 };
-
-export const getAccountStatus = async (req, res) => {
-  // console.log("GET ACCOUNT STATUS");
-  const user = await User.findById(req.user._id).exec();
-  const account = await stripe.accounts.retrieve(user.stripe_account_id);
-  // console.log("USER ACCOUNT RETRIEVE", account);
-  const updatedUser = await User.findByIdAndUpdate(
-    user._id,
-    {
-      stripe_seller: account,
-    },
-    { new: true }
-  )
-    .select("-password")
-    .exec();
-  // console.log(updatedUser);
-  res.json(updatedUser);
-};
