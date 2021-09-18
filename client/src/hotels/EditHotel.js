@@ -1,13 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import { DatePicker, Select } from "antd";
-import { createHotel } from "../actions/hotel";
+import { read, updateHotel } from "../actions/hotel";
 import { useSelector } from "react-redux";
-import HotelCreateForm from "../components/forms/HotelCreateForm";
+import HotelEditForm from "../components/forms/HotelEditForm";
 
 const { Option } = Select;
 
-const NewHotel = () => {
+const EditHotel = ({ match }) => {
   // redux
   const { auth } = useSelector((state) => ({ ...state }));
   const { token } = auth;
@@ -15,23 +15,32 @@ const NewHotel = () => {
   const [values, setValues] = useState({
     title: "",
     content: "",
-    image: "",
+    location: "",
     price: "",
     from: "",
     to: "",
     bed: "",
   });
+  const [image, setImage] = useState("");
   const [preview, setPreview] = useState(
     "https://via.placeholder.com/100x100.png?text=PREVIEW"
   );
-  const [location, setLocation] = useState("");
   // destructuring variables from state
-  const { title, content, image, price, from, to, bed } = values;
+  const { title, content, price, from, to, bed, location } = values;
+
+  useEffect(() => {
+    loadSellerHotel();
+  }, []);
+
+  const loadSellerHotel = async () => {
+    let res = await read(match.params.hotelId);
+    // console.log(res);
+    setValues({ ...values, ...res.data });
+    setPreview(`${process.env.REACT_APP_API}/hotel/image/${res.data._id}`);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // console.log(values);
-    // console.log(location);
 
     let hotelData = new FormData();
     hotelData.append("title", title);
@@ -43,25 +52,20 @@ const NewHotel = () => {
     hotelData.append("to", to);
     hotelData.append("bed", bed);
 
-    console.log([...hotelData]);
-
     try {
-      let res = await createHotel(token, hotelData);
-      console.log("HOTEL CREATE RES", res);
-      toast.success("New hotel is posted");
-      setTimeout(() => {
-        window.location.reload();
-      }, 1000);
+      let res = await updateHotel(token, hotelData, match.params.hotelId);
+      console.log("HOTEL UPDATE RES", res);
+      toast.success(`${res.data.title} is updated`);
     } catch (err) {
       console.log(err);
-      toast.error(err.response.data);
+      toast.error(err.response.data.err);
     }
   };
 
   const handleImageChange = (e) => {
     // console.log(e.target.files[0]);
     setPreview(URL.createObjectURL(e.target.files[0]));
-    setValues({ ...values, image: e.target.files[0] });
+    setImage(e.target.files[0]);
   };
 
   const handleChange = (e) => {
@@ -71,20 +75,18 @@ const NewHotel = () => {
   return (
     <>
       <div className="container-fluid bg-secondary p-5 text-center">
-        <h2>Add Hotel</h2>
+        <h2>Edit Hotel</h2>
       </div>
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-10">
             <br />
-            <HotelCreateForm
+            <HotelEditForm
               values={values}
               setValues={setValues}
               handleChange={handleChange}
               handleImageChange={handleImageChange}
               handleSubmit={handleSubmit}
-              location={location}
-              setLocation={setLocation}
             />
           </div>
           <div className="col-md-2">
@@ -94,7 +96,6 @@ const NewHotel = () => {
               className="img img-fluid m-2"
             />
             <pre>{JSON.stringify(values, null, 4)}</pre>
-            {JSON.stringify(location)}
           </div>
         </div>
       </div>
@@ -102,4 +103,4 @@ const NewHotel = () => {
   );
 };
 
-export default NewHotel;
+export default EditHotel;
