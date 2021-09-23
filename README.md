@@ -26,6 +26,9 @@ It cut sum of the fee Directly after user's Payment As a Platform Owner And pays
 ### HomePage
 ![hompepage1](https://user-images.githubusercontent.com/62200238/134591145-d25ed8bb-730e-463c-9953-2adfd92cb689.png)
 
+### Seraching And Booking A Hotel
+![searchhotel1](https://user-images.githubusercontent.com/62200238/134591458-e4cc1a48-4cc2-4ff4-8948-a6d144bc6677.png)
+
 ### No Of Beds
 ![mewago1](https://user-images.githubusercontent.com/62200238/134590774-806702aa-c721-411f-9b20-1cd31bf22c53.png)
 
