@@ -23,10 +23,10 @@ It cut sum of the fee Directly after user's Payment As a Platform Owner And pays
    - To run the application for development, run ```  npm run development  ```
 4. Open [localhost:3000](http://localhost:3000/) in the browser
 
-#HomePage
+### HomePage
 ![hompepage1](https://user-images.githubusercontent.com/62200238/134591145-d25ed8bb-730e-463c-9953-2adfd92cb689.png)
 
-#No Of Beds
+### No Of Beds
 ![mewago1](https://user-images.githubusercontent.com/62200238/134590774-806702aa-c721-411f-9b20-1cd31bf22c53.png)
 
 
