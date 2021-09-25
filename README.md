@@ -1,7 +1,6 @@
 
 
 ##### MEWAGO-The-Hotel-Booking-App
-Mewago : The Hotel Booking App
 
 •This App Allow Hotel owners to Post Services on the Site and Users are able to Buy them. Used `JavaScript with React Redux Node MongoDB` to
 build the Marketplace , `integrated Stripe payment Method`.
