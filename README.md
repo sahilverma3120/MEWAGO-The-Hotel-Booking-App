@@ -7,9 +7,7 @@ build the Marketplace , `integrated Stripe payment Method`.
 It cut sum of the fee Directly after user's Payment As a Platform Owner And pays back to Sellers.
 
 •Advanced `CRUD and Search Features` are used.
-
 •Used own `JWT based Authentication System` from scratch.
-
 
 #### What you need to run this code
 1. Node (8.11.1)
