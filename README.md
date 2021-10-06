@@ -14,7 +14,7 @@ It cut sum of the fee Directly after user's Payment As a Platform Owner And pays
 2. NPM (5.8.0)
 3. MongoDB (3.6.3)
 
-####  How to run this code
+`####  How to run this code`
 1. Make sure MongoDB is running on your system 
 2. Clone this repository
 3. Open command line in the cloned folder,
