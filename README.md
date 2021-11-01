@@ -5,7 +5,7 @@
 •This App Allow Hotel owners to Post Services on the Site and Users are able to Buy them. Used `JavaScript with React Redux Node MongoDB` to
 build the Marketplace , `integrated Stripe payment Method`.
 It cut sum of the fee Directly after user's Payment As a Platform Owner And pays back to Sellers.
-
+high 
 •Advanced `CRUD and Search Features` are used.
 •Used own `JWT based Authentication System` from scratch.
 
