@@ -24,14 +24,10 @@ high
 
 ### HomePage
 ![hompepage1](https://user-images.githubusercontent.com/62200238/134591145-d25ed8bb-730e-463c-9953-2adfd92cb689.png)
-
 ### Seraching And Booking A Hotel
 ![searchhotel1](https://user-images.githubusercontent.com/62200238/134591458-e4cc1a48-4cc2-4ff4-8948-a6d144bc6677.png)
-
 ### Stripe Payment : Sellars'side
 ![stripecheck](https://user-images.githubusercontent.com/62200238/134591906-c2f68f53-6aac-4595-93b5-d8acd95b1e46.PNG)
-
-
 ### No Of Beds
 ![mewago1](https://user-images.githubusercontent.com/62200238/134590774-806702aa-c721-411f-9b20-1cd31bf22c53.png)
 
